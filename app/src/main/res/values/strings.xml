@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">DIARY SOMETHING</string>
+
+    <string name="please_allow_us_to_access_your_camera_and_take_picture">Please allow us to access your camera and take picture.</string>
+    <string name="message_denied_camera_permission">You need to grant camera permission to use this feature!</string>
+    <string name="skip">Skip</string>
+    <string name="continue_caplock">CONTINUE</string>
+
+    <string name="ans_onb_1_1">I\'m new to it</string>
+    <string name="ans_onb_1_2">Used to do it a long time ago</string>
+    <string name="ans_onb_1_3">Occasionally</string>
+    <string name="ans_onb_1_4">Frequently</string>
+    <string name="ans_ong_2_1">Below 18</string>
+    <string name="ans_ong_2_2">18 – 25</string>
+    <string name="ans_ong_2_3">26 – 35</string>
+    <string name="ans_ong_2_4">36 – 45</string>
+    <string name="ans_ong_2_5">46 and above</string>
+    <string name="ans_ong_3_1">Deal with stress</string>
+    <string name="ans_ong_3_2">Daily reflections</string>
+    <string name="ans_ong_3_3">For a positive life mentality</string>
+    <string name="ans_ong_3_4">Inspire creativity</string>
+    <string name="ans_ong_3_5">Just want to write down something</string>
+    <string name="onb_title_1">How often do you write diaries?</string>
+    <string name="onb_title_2">May I ask your age?</string>
+    <string name="onb_title_3">Why do you want to keep diaries?</string>
+    <string name="please_select_one_option">Please select on option</string>
+    <string name="you_can_select_more_than_one_option">You can select more than one option</string>
+    <string name="set_your_pin">Set Your Pin</string>
+</resources>

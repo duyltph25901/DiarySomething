@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="bg_white">#FFFFFF</color>
+
+    <!--  COLOR THEME 1  -->
+    <color name="st_blue">#7399FF</color>
+    <color name="en_pink">#FE96D6</color>
+    <color name="primary_1">#BD98EA</color>
+    <color name="txt_AAAABB">#AAAABB</color>
+    <color name="txt_white">#FFFFFF</color>
+    <color name="btn_continue_onb_unactive">#AAAABB</color>
+    <color name="btn_continue_onb_active">#BD98EA</color>
+    <color name="txt_primary_1">#BD98EA</color>
+    <color name="txt_343434">#343434</color>
+    <color name="bg_ans_selected">#BD98EA</color>
+    <color name="bg_ans_un_selected">#FFFFFF</color>
+    <color name="txt_ans_selected">#FFFFFF</color>
+    <color name="txt_ans_un_selected">#343434</color>
+</resources>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_se_qs">
+
+        <ImageView
+            android:id="@+id/icBack"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_margin="@dimen/_12sdp"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#343434" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/nunito_extra_bold"
+            android:text="@string/set_security_question"
+            android:textColor="@color/txt_343434"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintStart_toEndOf="@id/icBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_36sdp"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@id/icBack">
+
+            <TextView
+                android:id="@+id/txtQs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_extra_bold"
+                android:padding="@dimen/_16sdp"
+                tools:text="What’s your favorite color?"
+                android:textColor="@color/txt_343434"
+                android:textSize="@dimen/_14ssp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/icDown"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:elevation="@dimen/_10sdp"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/ic_down"
+            app:layout_constraintBottom_toBottomOf="@id/cardQuestion"
+            app:layout_constraintEnd_toEndOf="@id/cardQuestion"
+            app:layout_constraintTop_toTopOf="@id/cardQuestion" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:layout_constraintTop_toBottomOf="@id/cardQuestion">
+
+            <EditText
+                android:id="@+id/edtAns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:fontFamily="@font/nunito_medium"
+                android:hint="@string/please_input_your_answer_here"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/_16sdp"
+                android:paddingVertical="@dimen/_16sdp"
+                android:textColor="@color/txt_343434"
+                android:textColorHint="@color/txt_DADADA"
+                android:textSize="@dimen/_14ssp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/btnConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/state_bg_btn_confirm_qs"
+            android:paddingVertical="@dimen/_12sdp"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="center"
+            android:text="@string/confirm"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/txt_white"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

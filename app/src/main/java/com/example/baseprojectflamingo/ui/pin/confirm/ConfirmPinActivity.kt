@@ -1,25 +1,38 @@
-package com.example.baseprojectflamingo.ui.pin.set
+package com.example.baseprojectflamingo.ui.pin.confirm
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.os.Handler
+import android.os.Looper
 import android.os.Vibrator
 import android.util.Log
-import androidx.activity.result.contract.ActivityResultContracts
 import com.example.baseprojectflamingo.R
 import com.example.baseprojectflamingo.commons.base.BaseActivity
 import com.example.baseprojectflamingo.commons.base.ext.click
 import com.example.baseprojectflamingo.commons.base.ext.hide
+import com.example.baseprojectflamingo.commons.base.ext.invisible
 import com.example.baseprojectflamingo.commons.base.ext.setOnClickAffect
 import com.example.baseprojectflamingo.commons.base.ext.show
-import com.example.baseprojectflamingo.databinding.ActivitySetPinBinding
-import com.example.baseprojectflamingo.ui.pin.confirm.ConfirmPinActivity
+import com.example.baseprojectflamingo.databinding.ActivityConfirmPinBinding
+import com.example.baseprojectflamingo.databinding.DialogLoadingBinding
+import com.example.baseprojectflamingo.ui.dialolog.LoadingDialog
+import com.example.baseprojectflamingo.ui.pin.se_qs.SecurityQsActivity
 
-class SetPinActivity : BaseActivity<ActivitySetPinBinding>(R.layout.activity_set_pin) {
+class ConfirmPinActivity : BaseActivity<ActivityConfirmPinBinding>(R.layout.activity_confirm_pin) {
 
+    private val dialogLoading: LoadingDialog by lazy {
+        LoadingDialog(this)
+    }
+
+    private val TIME_DELAY_TRUE_PIN = 1000L
+
+    private var pinCodeReceiver: String = ""
     private var pin = ""
 
-    override fun initVariables() = Unit
+    override fun initVariables() {
+        pinCodeReceiver = intent.getStringExtra("set_pin_value") ?: ""
+    }
 
     override fun initView() = Unit
 
@@ -38,7 +51,16 @@ class SetPinActivity : BaseActivity<ActivitySetPinBinding>(R.layout.activity_set
             number9.setOnClickAffect { setPin(9) }
             number0.setOnClickAffect { setPin(0) }
             icDelete.setOnClickAffect { deletePin() }
-            icDone.click { goToConfirmPassScreen() }
+            icDone.click {
+                onConfirmPinDone(
+                    onTruePin = onTruePin(),
+                    onFalsePin = onFalsePin()
+                )
+            }
+            icBack.click {
+                setResult(Activity.RESULT_OK)
+                finish()
+            }
         }
     }
 
@@ -72,6 +94,7 @@ class SetPinActivity : BaseActivity<ActivitySetPinBinding>(R.layout.activity_set
 
     private fun deletePin() {
         if (pin.isNotEmpty()) {
+            hideMessageWrongPass()
             vibrate()
             pin = pin.dropLast(1)
             when (pin.length) {
@@ -142,19 +165,41 @@ class SetPinActivity : BaseActivity<ActivitySetPinBinding>(R.layout.activity_set
 
     private fun showIcTick() = binding.icDone.show()
 
-    private fun goToConfirmPassScreen() {
-        val intent = Intent(this, ConfirmPinActivity::class.java).apply {
-            putExtra("set_pin_value", pin)
-        }
-        resultLauncherConfirmPin.launch(intent)
+    private fun onConfirmPinDone(
+        onTruePin: () -> Unit,
+        onFalsePin: () -> Unit
+    ) {
+        val isTruePin = pin == pinCodeReceiver
+        if (isTruePin) onTruePin.invoke()
+        else onFalsePin.invoke()
     }
 
-    private val resultLauncherConfirmPin =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode != Activity.RESULT_OK) {
-                clearPassActive()
-                hideIcTick()
-                pin = ""
-            } else Log.i("duylt", "Back From Confirm PIN")
-        }
+    private fun onTruePin(): () -> Unit = {
+        showLoadingDialog()
+        hideMessageWrongPass()
+        goToSecurityQuestionScreenAfterDelay()
+    }
+
+    private fun onFalsePin(): () -> Unit = {
+        vibrateWhenWrongPass()
+        showMessageWrongPass()
+    }
+
+    private fun vibrateWhenWrongPass() = vibrate()
+
+    private fun hideMessageWrongPass() = binding.txtPinWrong.invisible()
+
+    private fun showMessageWrongPass() = binding.txtPinWrong.show()
+
+    private fun goToSecurityQuestionScreenAfterDelay() =
+        Handler(Looper.getMainLooper()).postDelayed({
+            hideLoadingDialog()
+            startActivity(Intent(this, SecurityQsActivity::class.java))
+            finish()
+        }, TIME_DELAY_TRUE_PIN)
+
+    private fun showLoadingDialog() = dialogLoading.show()
+
+    private fun hideLoadingDialog() = dialogLoading.dismiss()
+
 }

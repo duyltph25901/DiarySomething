@@ -53,6 +53,14 @@
         <activity
             android:name=".ui.pin.set.SetPinActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".ui.pin.confirm.ConfirmPinActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.pin.se_qs.SecurityQsActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

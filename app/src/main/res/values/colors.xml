@@ -19,4 +19,6 @@
     <color name="bg_ans_un_selected">#FFFFFF</color>
     <color name="txt_ans_selected">#FFFFFF</color>
     <color name="txt_ans_un_selected">#343434</color>
+    <color name="txt_pin_wrong">#CA152F</color>
+    <color name="txt_DADADA">#DADADA</color>
 </resources>

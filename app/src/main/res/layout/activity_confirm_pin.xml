@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_pin_screen">
+
+        <ImageView
+            android:id="@+id/icBack"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_margin="@dimen/_12sdp"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/txtConfirmYourPin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/nunito_extra_bold"
+            android:text="@string/confirm_your_pin"
+            android:textColor="@color/txt_white"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/icBack" />
+
+        <ImageView
+            android:id="@+id/icDone"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_margin="@dimen/_12sdp"
+            android:src="@drawable/ic_tick"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/txtPinWrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/nunito_extra_bold"
+            android:text="@string/pins_don_t_match"
+            android:textColor="@color/txt_pin_wrong"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtConfirmYourPin" />
+
+        <LinearLayout
+            android:id="@+id/layoutPin"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPinWrong">
+
+            <ImageView
+                android:id="@+id/imgPin1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/ic_pin_un_active" />
+
+            <ImageView
+                android:id="@+id/imgPin2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/ic_pin_un_active" />
+
+            <ImageView
+                android:id="@+id/imgPin3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/ic_pin_un_active" />
+
+            <ImageView
+                android:id="@+id/imgPin4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pin_un_active" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/number2"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/number_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutPin" />
+
+        <ImageView
+            android:id="@+id/number1"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:src="@drawable/number_1"
+            app:layout_constraintBottom_toBottomOf="@id/number2"
+            app:layout_constraintEnd_toStartOf="@id/number2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/number2" />
+
+        <ImageView
+            android:id="@+id/number3"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:src="@drawable/number_3"
+            app:layout_constraintBottom_toBottomOf="@id/number2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/number2"
+            app:layout_constraintTop_toTopOf="@id/number2" />
+
+        <ImageView
+            android:id="@+id/number5"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:src="@drawable/number_5"
+            app:layout_constraintEnd_toEndOf="@id/number2"
+            app:layout_constraintStart_toStartOf="@id/number2"
+            app:layout_constraintTop_toBottomOf="@id/number2" />
+
+        <ImageView
+            android:id="@+id/number4"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:src="@drawable/number_4"
+            app:layout_constraintBottom_toBottomOf="@id/number5"
+            app:layout_constraintEnd_toEndOf="@id/number1"
+            app:layout_constraintStart_toStartOf="@id/number1"
+            app:layout_constraintTop_toTopOf="@id/number5" />
+
+        <ImageView
+            android:id="@+id/number6"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:src="@drawable/number_6"
+            app:layout_constraintBottom_toBottomOf="@id/number5"
+            app:layout_constraintEnd_toEndOf="@id/number3"
+            app:layout_constraintStart_toStartOf="@id/number3"
+            app:layout_constraintTop_toTopOf="@id/number5" />
+
+        <ImageView
+            android:id="@+id/number8"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:src="@drawable/number_8"
+            app:layout_constraintEnd_toEndOf="@id/number5"
+            app:layout_constraintStart_toStartOf="@id/number5"
+            app:layout_constraintTop_toBottomOf="@id/number5" />
+
+        <ImageView
+            android:id="@+id/number7"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:src="@drawable/number_7"
+            app:layout_constraintBottom_toBottomOf="@id/number8"
+            app:layout_constraintEnd_toEndOf="@id/number4"
+            app:layout_constraintStart_toStartOf="@id/number4"
+            app:layout_constraintTop_toTopOf="@id/number8" />
+
+        <ImageView
+            android:id="@+id/number9"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:src="@drawable/number_9"
+            app:layout_constraintBottom_toBottomOf="@id/number8"
+            app:layout_constraintEnd_toEndOf="@id/number6"
+            app:layout_constraintStart_toStartOf="@id/number6"
+            app:layout_constraintTop_toTopOf="@id/number8" />
+
+        <ImageView
+            android:id="@+id/number0"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:src="@drawable/number_0"
+            app:layout_constraintEnd_toEndOf="@id/number8"
+            app:layout_constraintStart_toStartOf="@id/number8"
+            app:layout_constraintTop_toBottomOf="@id/number8" />
+
+        <ImageView
+            android:id="@+id/icDelete"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:src="@drawable/ic_delete_pin"
+            app:layout_constraintBottom_toBottomOf="@id/number0"
+            app:layout_constraintEnd_toEndOf="@id/number9"
+            app:layout_constraintStart_toStartOf="@id/number9"
+            app:layout_constraintTop_toTopOf="@id/number0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

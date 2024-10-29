@@ -26,4 +26,12 @@
     <string name="please_select_one_option">Please select on option</string>
     <string name="you_can_select_more_than_one_option">You can select more than one option</string>
     <string name="set_your_pin">Set Your Pin</string>
+    <string name="confirm_your_pin">Confirm Your PIN</string>
+    <string name="pins_don_t_match">PINS don’t match</string>
+    <string name="loading">Loading...</string>
+    <string name="this_process_will_take_a_few_minutes">This process will take a few minutes</string>
+    <string name="set_security_question">Set Security Question</string>
+    <string name="what_s_your_favorite_color">What’s your favorite color?</string>
+    <string name="please_input_your_answer_here">Please input your answer here</string>
+    <string name="confirm">Confirm</string>
 </resources>
